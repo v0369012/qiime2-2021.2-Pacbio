@@ -25,6 +25,7 @@ The codes processing long reads are from https://github.com/sixvable/q2-dada2-CC
 
 #### Change the file format of run_dada_ccs.R
 Because qiime2 is running on Linux, run_dada_css.R should be unix format.
+
 `sudo apt-get install dos2unix # If you don't have 'dos2unix' commmand`
 
 `dos2unix /yourqiime2path/envs/qiime2-2021.2-Pacbio/bin/run_dada_ccs.R`
