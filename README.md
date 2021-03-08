@@ -9,6 +9,7 @@ The codes processing long reads are from https://github.com/sixvable/q2-dada2-CC
 
 #### Create the environment
 `cd ./qiime2-2021.2-Pacbio-git`
+
 `conda env create -n qiime2-2021.2-Pacbio --file qiime2-2021.2-Pacbio.yml`
 
 #### Start the environment
@@ -19,7 +20,14 @@ The codes processing long reads are from https://github.com/sixvable/q2-dada2-CC
 `git clone https://github.com/sixvable/q2-dada2-CCS.git`
 #### replace the original files
 `cp ./q2-dada2-CCS/*.py /yourqiime2path/envs/qiime2-2021.2-Pacbio/lib/python3.6/site-packages/q2_dada2/`
+
 `cp ./q2-dada2-CCS/run_dada_ccs.R /yourqiime2path/envs/qiime2-2021.2-Pacbio/bin`
+
+#### Change the file format of run_dada_ccs.R
+##### Because qiime2 is running on Linux, run_dada_css.R should be unix format.
+`sudo apt-get install dos2unix # If you don't have 'dos2unix' commmand`
+
+`dos2unix /yourqiime2path/envs/qiime2-2021.2-Pacbio/bin/run_dada_ccs.R`
 
 #### Refresh qiime2
 `qiime dev refresh-cache`
